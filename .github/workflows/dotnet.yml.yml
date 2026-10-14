@@ -1,4 +1,5 @@
-﻿name: RaceDay API Build and Test
+﻿
+name: RaceDay API Build and Test
 
 on:
   push:
@@ -20,7 +21,10 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore RaceDay.API/RaceDay.API.csproj
+        run: dotnet restore RaceDay.sln
 
-      - name: Build API
-        run: dotnet build RaceDay.API/RaceDay.API.csproj --configuration Release --no-restore
+      - name: Build solution
+        run: dotnet build RaceDay.sln --configuration Release --no-restore
+
+      - name: Run unit tests
+        run: dotnet test RaceDay.API.Tests/RaceDay.API.Tests.csproj --configuration Release
