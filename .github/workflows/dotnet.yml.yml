@@ -1,4 +1,4 @@
-﻿name: RaceDay API Build
+﻿name: RaceDay API Build and Test
 
 on:
   push:
